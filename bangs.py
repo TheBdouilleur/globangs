@@ -37,10 +37,8 @@ currentCharList = [] #
 
 def on_press(key):
     global currentCharList
-    print(f'{key}')
-    print(key)
 
-    #FIXME: Currently every keys pressed after ! are included in currentList 
+    #FIXME: Currently every keys pressed after ! are included in currentCharList 
     if (key == keyboard.KeyCode.from_char('!')) or (currentCharList and not key == keyboard.Key.space): # Check if: key is !, key follows !, key isn't a space
         currentCharList.append(str(key).strip("'")) # Without this, key looks like this '"key"'
 
@@ -51,9 +49,7 @@ def on_press(key):
         autoComplete(placeHolderList)
 
 
-    else:
-        print(key, ' not equal to "!"')
 if __name__ == '__main__':
     with keyboard.Listener(on_press=on_press) as listener:
-    listener.join()
+        listener.join()
 
