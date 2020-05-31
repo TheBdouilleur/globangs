@@ -1,7 +1,8 @@
 {
-    "keyboardShortcut":"ctrl+alt+a",
-    "bangs":{
-        "!g":"https://google.com/search?q=",
-        "!@":"myverylongemail@verylonghoster.topleveldomain"
-             }
+  "bangs": {
+    "!g": "https://google.com/search?q=",
+    "!@": "myverylongemail@verylonghoster.topleveldomain",
+    "pwd": "myverylongpassword"
+  }
 }
+
