@@ -34,12 +34,11 @@ def autoComplete(characterList):
 
 '''2. Keyboard shortcut handling'''
 currentCharList = [] #
-
+specialKeys = [specialKey for specialKey in keyboard.Key]
 def on_press(key):
     global currentCharList
 
-    #FIXME: Currently every keys pressed after ! are included in currentCharList 
-    if (key == keyboard.KeyCode.from_char('!')) or (currentCharList and not key == keyboard.Key.space): # Check if: key is !, key follows !, key isn't a space
+    if  key not in specialKeys and not key == keyboard.Key.space: # Check if: key is !, key follows !, key isn't a space
         currentCharList.append(str(key).strip("'")) # Without this, key looks like this '"key"'
 
     elif key == keyboard.Key.space and currentCharList:
